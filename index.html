@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tolltips | UI/UX</title>
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		.container{
+			max-width: 1100px;
+			margin: 0 auto;
+			padding: 0 2%;
+		}
+
+		.container p{
+			margin-top:10px;
+		}
+
+		.container p.tooltipbox{
+			display: inline-block;
+			cursor: pointer;
+			position: relative;
+			border-bottom: 1px dotted #ccc;
+		}
+
+		.tooltip{
+			opacity: 0;
+			position: absolute;
+			transition: 1s;
+			width: 120px;
+			padding: 3px 4px;
+			top: 16px;
+			right: -50px;
+			background: black;
+			color: white;
+		}
+		p.tooltipbox:hover .tooltip{
+			opacity: 1;
+			right: 0;
+		}
+
+		.material-icons{
+			font-size: 15px;
+			position: relative;
+			top: 3px;
+			color: white;
+		}
+
+		.botao{
+			height: 70px;
+			line-height: 30px;
+			border-radius: 10px;
+			position: relative;
+			top: 100px;
+		}
+
+		.back{
+			display: inline-block;
+			width: 100%;
+			margin: 0 auto;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+		<div class="container">
+			<div class="back">
+			 <a class="botao btn tooltipped" data-position="bottom" data-tooltip="I am a tooltip!</br> Sou uma dica!"><i class="material-icons">control_point</i> Hover me!
+			 </br><i class="material-icons">control_point</i> Passa aqui!</a>
+			</div><!--back-->
+		</div><!--container-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+	<script>
+	M.AutoInit();
+
+		document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.tooltipped');
+    var instances = M.Tooltip.init(elems, options);
+  });
+	</script>
+</body>
+</html>
